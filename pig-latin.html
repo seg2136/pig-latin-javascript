@@ -9,17 +9,22 @@
   </head>
   <body>
     <div class="container">
-      <h1>It's a Pig Latin Translator!</h1>
-
-      <form id="">
-        <div class="form-group">
-          <label for="user-input">Enter a word:</label>
-          <input id="user-input" type="text">
+      <div class="row">
+        <div class="col-sm-5">
+          <h1>Pig Latin Translator</h1>
+            <div class="jumbotron">
+              <form id="translator">
+                  <div class="form-group">
+                    <label for="word">Enter word here:</label>
+                    <input id="word" type="text">
+                  </div>
+                <button type="submit" class="btn">submit</button>
+            </form>
+            <h6 id="result"><span class="pigAnswer"></span></h6>
+          </div>
+          </div>
         </div>
-
-      <button type="submit" class="btn btn-info">Submit!</button>
-    </form>
-    <h4 class="result"></h4>
-   </div>
- </body>
+      </div>
+    </div>
+  </body>
 </html>

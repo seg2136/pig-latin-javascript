@@ -14,7 +14,14 @@ var startsWithAVowel = function(word) {
   return vowels.indexOf(firstLetter) !== -1;
 };
 
-$(function() {
-  
+$(document).ready(function() {
+  $("form#translator").submit(function(event) {
+  var word = ($("input#word").val());
+  var result = pigLatinTranslator(word);
 
+  $(".pigAnswer").text(result);
+
+  $("#result").show();
+  event.preventDefault();
+  });
 });
