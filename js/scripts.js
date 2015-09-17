@@ -1,17 +1,20 @@
 var pigLatinTranslator = function(word) {
-  var word1 = word.toLowerCase();
+  var word = word.toLowerCase();
   var pigAy = "ay";
-  var pigWord = word1 + pigAy;
+  var pigWord = word + pigAy;
+
 
   if (startsWithAVowel(word)) {
       return pigWord;
-  } else if (startsWithTwoConsonants(word)) {
-      var pigWordCons = word.substring(2) + word[0] + "ay";
+  }
+    else if (startsWithTwoConsonants(word)) {
+      var pigWordCons = word.substring(2) + word.slice(0, 2) + pigAy;
       return pigWordCons;
-  } else {
-      var consWord = word.substring(1) + word[0] + "ay";
+  }
+    else {
+      var consWord = word.substring(1) + word.slice(0, 1) + pigAy;
       return consWord;
-    }
+  }
 };
 
 var startsWithAVowel = function(word) {
@@ -21,9 +24,12 @@ var startsWithAVowel = function(word) {
 };
 
 var startsWithTwoConsonants = function(word) {
-  var consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "y"];
-  var twoCons = word.slice(0,2);
-  return consonants.indexOf(twoCons) !== -1;
+  var consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "y", "z"];
+  var firstTwo = word.slice(0, 2).split("");
+  // ["p", "r"]
+  var firstLetterCons = consonants.indexOf(firstTwo[0]) > -1; // true
+  var secondLetterCons = consonants.indexOf(firstTwo[1]) !== -1; // true
+  return firstLetterCons && secondLetterCons;
 };
 
 $(document).ready(function() {
