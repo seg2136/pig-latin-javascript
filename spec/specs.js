@@ -10,4 +10,8 @@ describe('pigLatinTranslator', function() {
   it("takes two consonants at the beginning of the word and moves it to the end", function() {
     expect(pigLatinTranslator("great")).to.equal("eatgray");
   });
+
+  it("takes the combo 'qu' at the beginning of the word and moves it to the end", function() {
+    expect(pigLatinTranslator("quack")).to.equal("ackquay");
+  });
 });
