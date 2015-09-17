@@ -25,8 +25,7 @@ var startsWithAVowel = function(word) {
 
 var startsWithTwoConsonants = function(word) {
   var consonants = ["b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "y", "z"];
-  var firstTwo = word.slice(0, 2).split("");
-  // ["p", "r"]
+  var firstTwo = word.slice(0, 2).split(""); // ["p", "r"]
   var firstLetterCons = consonants.indexOf(firstTwo[0]) > -1; // true
   var secondLetterCons = consonants.indexOf(firstTwo[1]) !== -1; // true
   return firstLetterCons && secondLetterCons;
